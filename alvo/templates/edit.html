@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Editar Alvo{% endblock %}
+
+{% block content %}
+    <form method="POST" class="post-form" action=".">
+        {% csrf_token %}
+        <div class="container">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3>Atulizar Alvo</h3>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">Nome do Alvo:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="alvo_nome" id="nome_alvo" required maxlength="100"
+                               value="{{ alvo.nome }}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Latitude:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="latitude" id="latitude" required maxlength="9"
+                               value="{{ alvo.latitude }}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">longitude:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="longitude" id="longitude" required maxlength="9"
+                               value="{{ alvo.longitude }}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">Data de Expiração:</label>
+                    <div class="col-sm-4">
+                        <input type="date" name="longitude" id="longitude" required maxlength="9"
+                               value="{{ alvo.data_expiracao }}"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-success">Atulizar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
